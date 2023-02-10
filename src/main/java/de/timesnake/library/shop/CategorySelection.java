@@ -5,23 +5,19 @@
 package de.timesnake.library.shop;
 
 import de.timesnake.basic.bukkit.util.Server;
-import de.timesnake.basic.bukkit.util.user.ExInventory;
-import de.timesnake.basic.bukkit.util.user.ExItemStack;
-import de.timesnake.basic.bukkit.util.user.event.UserInventoryClickEvent;
-import de.timesnake.basic.bukkit.util.user.event.UserInventoryClickListener;
-import de.timesnake.basic.bukkit.util.user.event.UserInventoryInteractEvent;
-import de.timesnake.basic.bukkit.util.user.event.UserInventoryInteractListener;
-import de.timesnake.library.basic.util.chat.ExTextColor;
-import net.kyori.adventure.text.Component;
+import de.timesnake.basic.bukkit.util.user.inventory.ExInventory;
+import de.timesnake.basic.bukkit.util.user.inventory.ExItemStack;
+import de.timesnake.basic.bukkit.util.user.inventory.UserInventoryClickEvent;
+import de.timesnake.basic.bukkit.util.user.inventory.UserInventoryClickListener;
+import de.timesnake.basic.bukkit.util.user.inventory.UserInventoryInteractEvent;
+import de.timesnake.basic.bukkit.util.user.inventory.UserInventoryInteractListener;
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Set;
 
 public class CategorySelection implements InventoryHolder, UserInventoryInteractListener, UserInventoryClickListener {
