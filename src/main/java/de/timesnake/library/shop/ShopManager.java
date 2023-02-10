@@ -6,11 +6,7 @@ package de.timesnake.library.shop;
 
 import de.timesnake.basic.bukkit.util.Server;
 import de.timesnake.basic.bukkit.util.chat.Plugin;
-import de.timesnake.basic.bukkit.util.user.ExItemStack;
-import de.timesnake.basic.bukkit.util.user.event.UserInventoryInteractEvent;
-import de.timesnake.basic.bukkit.util.user.event.UserInventoryInteractListener;
-import de.timesnake.library.basic.util.chat.ExTextColor;
-import net.kyori.adventure.text.Component;
+import de.timesnake.basic.bukkit.util.user.inventory.ExItemStack;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 

@@ -5,12 +5,11 @@
 package de.timesnake.library.shop;
 
 import de.timesnake.basic.bukkit.util.Server;
-import de.timesnake.basic.bukkit.util.user.ExInventory;
-import de.timesnake.basic.bukkit.util.user.ExItemStack;
+import de.timesnake.basic.bukkit.util.user.inventory.ExInventory;
+import de.timesnake.basic.bukkit.util.user.inventory.ExItemStack;
 import de.timesnake.basic.bukkit.util.user.User;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
-import org.jetbrains.annotations.NotNull;
 
 public class ItemShop implements InventoryHolder {
 
