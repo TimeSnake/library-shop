@@ -4,9 +4,8 @@
 
 package de.timesnake.library.shop;
 
-import de.timesnake.basic.bukkit.util.Server;
-import de.timesnake.basic.bukkit.util.chat.Plugin;
 import de.timesnake.basic.bukkit.util.user.inventory.ExItemStack;
+import de.timesnake.library.basic.util.Loggers;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,7 +19,7 @@ public class ShopManager {
 
     public ShopManager(JavaPlugin plugin) {
         this.plugin = plugin;
-        Server.printText(Plugin.INFO, "Shop loaded", "Shop");
+        Loggers.SHOP.info("Shop loaded");
         cs = new CategorySelection();
     }
 
