@@ -5,19 +5,15 @@
 package de.timesnake.library.shop;
 
 import de.timesnake.basic.bukkit.util.Server;
-import de.timesnake.basic.bukkit.util.user.inventory.ExInventory;
-import de.timesnake.basic.bukkit.util.user.inventory.ExItemStack;
-import de.timesnake.basic.bukkit.util.user.inventory.UserInventoryClickEvent;
-import de.timesnake.basic.bukkit.util.user.inventory.UserInventoryClickListener;
-import de.timesnake.basic.bukkit.util.user.inventory.UserInventoryInteractEvent;
-import de.timesnake.basic.bukkit.util.user.inventory.UserInventoryInteractListener;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Set;
+import de.timesnake.basic.bukkit.util.user.inventory.*;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.meta.SkullMeta;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Set;
 
 public class CategorySelection implements InventoryHolder, UserInventoryInteractListener,
     UserInventoryClickListener {
@@ -28,7 +24,7 @@ public class CategorySelection implements InventoryHolder, UserInventoryInteract
   private final HashMap<ExItemStack, ShopCategory> shopCategoryByItemId = new HashMap<>();
 
   public CategorySelection() {
-    this.inventory = Server.createExInventory(invSize, "Shop", this);
+    this.inventory = new ExInventory(invSize, "Shop", this);
 
     for (ShopCategory sc : ShopCategory.values()) {
       inventory.setItemStack(sc.getSlot(), sc.getItem());
