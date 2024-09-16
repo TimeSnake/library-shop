@@ -39,10 +39,12 @@ dependencies {
 
     compileOnly("de.timesnake:library-game:2.+")
 
+    compileOnly("de.timesnake:library-pets:2.+")
     compileOnly("de.timesnake:library-entities:3.+")
     compileOnly("de.timesnake:library-packets:3.+")
 
     compileOnly("de.timesnake:library-permissions:2.+")
+    compileOnly("de.timesnake:library-commands:2.+")
     compileOnly("de.timesnake:library-basic:2.+")
     compileOnly("de.timesnake:library-chat:2.+")
 
@@ -62,10 +64,12 @@ configurations.configureEach {
 
             substitute(module("de.timesnake:library-game")).using(project(":libraries:library-game"))
 
+            substitute(module("de.timesnake:library-pets")).using(project(":libraries-mc:library-pets"))
             substitute(module("de.timesnake:library-entities")).using(project(":libraries-mc:library-entities"))
             substitute(module("de.timesnake:library-packets")).using(project(":libraries-mc:library-packets"))
 
             substitute(module("de.timesnake:library-permissions")).using(project(":libraries:library-permissions"))
+            substitute(module("de.timesnake:library-permissions")).using(project(":libraries:library-commands"))
             substitute(module("de.timesnake:library-basic")).using(project(":libraries:library-basic"))
             substitute(module("de.timesnake:library-chat")).using(project(":libraries:library-chat"))
         }
