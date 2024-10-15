@@ -31,12 +31,14 @@ public class ShopManager implements Listener {
 
   private final PetManager petManager;
   private final int slot;
+  private final int actionSlot;
 
   private final UserMap<User, ShopMenu> shopByUser = new UserMap<>();
 
-  public ShopManager(JavaPlugin plugin, PetManager petManager, int slot) {
+  public ShopManager(JavaPlugin plugin, PetManager petManager, int slot, int actionSlot) {
     this.petManager = petManager;
     this.slot = slot;
+    this.actionSlot = actionSlot;
     Server.registerListener(this, plugin);
   }
 
@@ -56,5 +58,9 @@ public class ShopManager implements Listener {
   @EventHandler
   public void onUserJoin(AsyncUserJoinEvent event) {
     this.loadShopForUser(event.getUser(), true);
+  }
+
+  public int getActionSlot() {
+    return this.actionSlot;
   }
 }
