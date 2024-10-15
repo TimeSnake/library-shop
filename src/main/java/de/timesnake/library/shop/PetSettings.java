@@ -83,7 +83,7 @@ public class PetSettings extends ShopSection {
   private void loadPets() {
     Collection<PetType> userPetTypes = this.getUserPets().stream().map(Pet::getType).toList();
 
-    int slot = 10;
+    int slot = 19;
     for (PetType type : PetType.values()) {
       if (slot % 9 == 8) slot += 2;
       this.inventory.setItemStack(slot, type.getDisplayItem().cloneWithId()
