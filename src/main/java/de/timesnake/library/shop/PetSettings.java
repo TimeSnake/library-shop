@@ -86,7 +86,7 @@ public class PetSettings extends ShopSection {
     int slot = 19;
     for (PetType type : PetType.values()) {
       if (slot % 9 == 8) slot += 2;
-      this.inventory.setItemStack(slot, type.getDisplayItem().cloneWithId()
+      this.inventory.setItemStack(slot, type.getDisplayItem().cloneWithNewId()
           .setDisplayName(type.getDisplayName())
           .enchant(userPetTypes.contains(type))
           .onClick(e -> {
