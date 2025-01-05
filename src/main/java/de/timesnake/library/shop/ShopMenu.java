@@ -22,8 +22,10 @@ public class ShopMenu {
     List<Pet<?>> pets = shopManager.getPetManager().getPetsByUser().get(this.user);
     if (!pets.isEmpty()) {
       this.loadSection(10, new PetSettings(shopManager, this.user, pets.getFirst()));
-      this.loadSection(11, new ActionItemShop(shopManager, this.user));
+    } else {
+      this.loadSection(10, new PetSettings(shopManager, this.user, null));
     }
+    this.loadSection(11, new ActionItemShop(shopManager, this.user));
   }
 
   private void loadSection(int slot, ShopSection section) {
