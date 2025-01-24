@@ -76,17 +76,6 @@ configurations.configureEach {
     }
 }
 
-tasks.register<Copy>("exportAsPlugin") {
-    from(layout.buildDirectory.file("libs/${project.name}-${project.version}-all.jar"))
-    into(findProperty("timesnakePluginDir") ?: "")
-
-    dependsOn("shadowJar")
-}
-
-tasks.withType<PublishToMavenRepository> {
-    dependsOn("shadowJar")
-}
-
 publishing {
     repositories {
         maven {
