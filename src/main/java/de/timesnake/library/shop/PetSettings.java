@@ -5,11 +5,11 @@
 package de.timesnake.library.shop;
 
 import de.timesnake.basic.bukkit.util.Server;
-import de.timesnake.basic.bukkit.util.chat.Plugin;
 import de.timesnake.basic.bukkit.util.chat.cmd.Sender;
 import de.timesnake.basic.bukkit.util.user.User;
 import de.timesnake.basic.bukkit.util.user.inventory.ExInventory;
 import de.timesnake.basic.bukkit.util.user.inventory.ExItemStack;
+import de.timesnake.library.chat.Plugin;
 import de.timesnake.library.pets.PetType;
 import de.timesnake.library.pets.pets.Pet;
 import org.bukkit.Material;
