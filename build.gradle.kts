@@ -12,7 +12,7 @@ plugins {
 
 
 group = "de.timesnake"
-version = "0.3.0"
+version = "0.4.0"
 var projectId = 41
 
 repositories {
@@ -29,49 +29,23 @@ repositories {
 }
 
 dependencies {
-    compileOnly("de.timesnake:basic-bukkit:4.+")
+    api("de.timesnake:basic-bukkit:5.+")
+    api("de.timesnake:library-pets:3.+")
 
-    compileOnly("de.timesnake:database-bukkit:4.+")
-    compileOnly("de.timesnake:database-api:4.+")
-
-    compileOnly("de.timesnake:channel-bukkit:5.+")
-    compileOnly("de.timesnake:channel-api:5.+")
-
-    compileOnly("de.timesnake:library-game:2.+")
-
-    compileOnly("de.timesnake:library-pets:2.+")
-    compileOnly("de.timesnake:library-entities:3.+")
-    compileOnly("de.timesnake:library-packets:3.+")
-
-    compileOnly("de.timesnake:library-permissions:2.+")
-    compileOnly("de.timesnake:library-commands:2.+")
-    compileOnly("de.timesnake:library-basic:2.+")
-    compileOnly("de.timesnake:library-chat:2.+")
+    api("de.timesnake:library-game:3.+")
 
     paperweight.paperDevBundle("1.21-R0.1-SNAPSHOT")
 }
 
-configurations.configureEach {
-    resolutionStrategy.dependencySubstitution {
-        if (project.parent != null) {
-            substitute(module("de.timesnake:basic-bukkit")).using(project(":cores:basic-bukkit"))
-
-            substitute(module("de.timesnake:database-bukkit")).using(project(":database:database-bukkit"))
-            substitute(module("de.timesnake:database-api")).using(project(":database:database-api"))
-
-            substitute(module("de.timesnake:channel-bukkit")).using(project(":channel:channel-bukkit"))
-            substitute(module("de.timesnake:channel-api")).using(project(":channel:channel-api"))
-
-            substitute(module("de.timesnake:library-game")).using(project(":libraries:library-game"))
-
-            substitute(module("de.timesnake:library-pets")).using(project(":libraries-mc:library-pets"))
-            substitute(module("de.timesnake:library-entities")).using(project(":libraries-mc:library-entities"))
-            substitute(module("de.timesnake:library-packets")).using(project(":libraries-mc:library-packets"))
-
-            substitute(module("de.timesnake:library-permissions")).using(project(":libraries:library-permissions"))
-            substitute(module("de.timesnake:library-permissions")).using(project(":libraries:library-commands"))
-            substitute(module("de.timesnake:library-basic")).using(project(":libraries:library-basic"))
-            substitute(module("de.timesnake:library-chat")).using(project(":libraries:library-chat"))
+configurations.all {
+    resolutionStrategy.dependencySubstitution.all {
+        requested.let {
+            if (it is ModuleComponentSelector && it.group == "de.timesnake") {
+                val targetProject = findProject(":${it.module}")
+                if (targetProject != null) {
+                    useTarget(targetProject)
+                }
+            }
         }
     }
 }
